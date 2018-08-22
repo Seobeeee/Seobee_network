@@ -1,0 +1,23 @@
+#pragma once
+
+enum eProtocol
+{
+	PROCESS_PACKET					=	0x000000,
+	C_TO_G_CHAR_ENTER_MATCHING_REQ	=	0x000001,
+	C_TO_G_CHAR_ENTER_MATCHING_ACK	=	0x000002,
+	C_TO_G_CHAR_ENTER_ROOM_ACK		=	0x000003,
+
+
+
+
+
+
+
+
+
+
+
+
+
+	PROCESS_DB						= 0x010000,
+};	

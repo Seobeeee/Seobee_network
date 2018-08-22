@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<protocol>
+  <!--Enum-->
+  <enum name="RoomType">
+    <param name="NormalGameRoom" value="1">일반 게임룸</param>
+    <param name="CommunityRoom" value="2">커뮤니티 룸</param>
+  </enum>
+
+  <!--Struct-->
+  <struct name="UserInfoTest">
+    <param type="Int32" name="listID"> 해당 유저의 ListID </param>
+    <param type="Int64" name="playerCSN"> 해당 유저의 캐릭터 고유 값 UUID</param>
+    <param type="Int64" name="playerGSN"> 해당 유저의 계정 고유 값 UUID</param>
+    <param type="String" name="nickName"> 해당 유저의 닉네임</param>
+    <param type="String" name="publicIP"> 해당 유저의 퍼블릭 IP</param>>
+  </struct>
+
+  <!--Packet-->
+  <packet name="CharacterEnterMatchingRequest">
+    <param type ="RoomType" name="roomtype">방 입장 타입( 1 - 일반 게임룸, 2 - 커뮤니티 룸 ) 임시값</param>
+  </packet>
+
+  <packet name="CharacterEnterMatchingRequestReply">
+    <param type="Int8" name="result">결과값</param>
+    <param type="Int8" name="playerCount"> 방에 존재하는 인원 수</param>
+    <param type="Int32" name="listID"> 해당 유저의 ListID </param>
+    <param type="List:UserInfoTest" name="userInfoTest">유저 인포 리스트</param>
+  </packet>
+  <packet name="ReplyNotifyCharacterEnterRoom">
+    <param type="Int8" name="result">결과값</param>
+    <param type="Int8" name="playerCount"> 방에 존재하는 인원 수</param>
+    <param type="Int32" name="listID"> 해당 유저의 ListID </param>
+    <param type="Int64" name="playerCSN"> 해당 유저의 캐릭터 고유 값 UUID</param>
+    <param type="Int64" name="playerGSN"> 해당 유저의 계정 고유 값 UUID</param>
+    <param type="String" name="nickName"> 해당 유저의 닉네임</param>
+    <param type="String" name="publicIP"> 해당 유저의 퍼블릭 IP</param>
+  </packet>
+</protocol>
